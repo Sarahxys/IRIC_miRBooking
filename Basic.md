@@ -47,3 +47,9 @@ to insert/change
 ```
 :i
 ```
+
+#Rotate.R script
+to run this script
+```
+Rscript rotate.R result
+```
