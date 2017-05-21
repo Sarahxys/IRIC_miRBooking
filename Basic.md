@@ -33,6 +33,16 @@ to sesearch for particular information (tutorial: https://dev.mysql.com/doc/refm
 ```
 select * from cell_line where name like '%...%'
 ```
+formats of each database:
+- cell line
+  ```
+  | id   | name          | version | dataset | species      | source   | notes                    
+  ```
+- mirna
+  ```
+  accession    | name                 | sequence                           | seed_index |
+  ```
+ 
 
 
 
