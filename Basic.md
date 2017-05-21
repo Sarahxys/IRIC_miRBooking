@@ -1,4 +1,11 @@
 # Basic Commands for miRBooking and others
+
+# miRBooking
+to run miRBooking:
+```
+java -Xmx10g -jar mirdesign_0.16.jar -s scores -i test_EMT.mirun --output result -e experiments --experiment-format advanced
+```
+
 # MySQL
 to access mysql
 ```
