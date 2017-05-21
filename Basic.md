@@ -1,17 +1,17 @@
 # Basic Commands for miRBooking and others
 
 # miRBooking
-to run miRBooking:
+To run miRBooking:
 ```
 java -Xmx10g -jar mirdesign_0.16.jar -s scores -i test_EMT.mirun --output result -e experiments --experiment-format advanced
 ```
 
 # MySQL
-to access mysql
+To access mysql
 ```
 mysql --host binsrv2.iric.ca mirdesign
 ```
-to get the table; the second one is the actually table and it is pasted here for easier assess for myself:
+To get the table; the second one is the actually table and it is pasted here for easier assess for myself:
 ```
 show tables;
 ```
@@ -29,11 +29,11 @@ show tables;
 
 ```
 
-to sesearch for particular information (tutorial: https://dev.mysql.com/doc/refman/8.0/en/selecting-rows.html):
+To sesearch for particular information (tutorial: https://dev.mysql.com/doc/refman/8.0/en/selecting-rows.html):
 ```
 select * from cell_line where name like '%...%'
 ```
-formats of each database:
+Formats of each database:
 - cell line
   ```
   | id   | name          | version | dataset | species      | source   | notes                    
@@ -48,19 +48,19 @@ formats of each database:
 
 
 # VIM
-to edit
+To create vim file or to edit
 ```
 vi test_EMT.mirun
 ```
-to exit
+To exit
 ```
 :q
 ```
-to overide/save
+To overide/save
 ```
 :qw
 ```
-to insert/change
+To insert/change
 ```
 :i
 ```
