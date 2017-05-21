@@ -42,7 +42,10 @@ Formats of each database:
   ```
   accession    | name                 | sequence                           | seed_index |
   ```
- 
+- mirna_expression
+  ```
+  | cell_line | accession    | quantity |
+  ```
 
 
 
