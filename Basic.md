@@ -51,7 +51,8 @@ Formats of each database:
   | accession    | name | variant | cds_start | cds_end | sequence   
   ```
 - target_expression
-  ``| cell_line | accession | quantity | 
+  ```
+  | cell_line | accession | quantity | 
   ```
 
 
