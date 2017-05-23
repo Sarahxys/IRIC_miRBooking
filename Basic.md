@@ -81,3 +81,9 @@ to run this script
 ```
 Rscript rotate.R result
 ```
+
+#Access folder
+first author 
+```
+cd weilln
+```
