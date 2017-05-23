@@ -3,7 +3,7 @@
 # miRBooking
 To run miRBooking:
 ```
-java -Xmx10g -jar mirdesign_0.16.jar -s scores -i test_EMT.mirun --output result -e experiments --experiment-format advanced
+java -Xmx10g -jar ~/mirdesign_0.16.jar -s ~/scores -i HV2_LTHY1.mirun --output result -e experiments --experiment-format advanced
 ```
 
 # MySQL
@@ -69,7 +69,7 @@ To exit
 ```
 To overide/save
 ```
-:qw
+:wq
 ```
 To insert/change
 ```
