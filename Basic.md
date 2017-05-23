@@ -48,7 +48,7 @@ Formats of each database:
   ```
 - target
   ```
-  
+  | accession    | name | variant | cds_start | cds_end | sequence   
   ```
 - target_expression
   ```
