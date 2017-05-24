@@ -79,7 +79,7 @@ To insert/change
 # Rotate.R script
 to run this script
 ```
-Rscript rotate.R result
+Rscript ~/rotate.R result
 ```
 
 #Access folder
