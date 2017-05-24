@@ -1,5 +1,5 @@
 # IRIC_miRBooking
 This is created to document the commands that I used for my summer internship in Dr. Major's lab, IRIC. This project focus on examining RNA leader and follower using miRBooking. 
 
-Project objective:
-1. identify leader and follower of genes in Jordan's experiment by munipulating gene expression level with miRBooking and examining silencing factors. (maybe using Zohra's scripts if any)
+Project objectives:
+1. Identifying leaders and followers of genes in Jordan's hypoxia experiment by munipulating gene expression levels with miRBooking and examining silencing pows. (maybe using Zohra's scripts if any)
