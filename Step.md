@@ -1,5 +1,5 @@
 # Generating Protein Interaction graph
-1. average expression file from Albert
+1. average expression file from Albert or Blandine
 2. covert it to xml file with all the info (alias, symbols, protein name, and label)
 -  modify for human database (ex. database link, formatting of names, and other difference between human and mice )
 - Blandine should have the modified version
