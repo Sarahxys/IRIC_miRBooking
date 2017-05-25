@@ -6,3 +6,6 @@
   - 
 5. running python
 - python script_name make_file
+
+
+PS: download cytoscape
