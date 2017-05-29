@@ -5,6 +5,11 @@ To run miRBooking:
 ```
 java -Xmx10g -jar ~/mirdesign_0.16.jar -s ~/scores -i HV2_LTHY1.mirun --output result -e experiments --experiment-format advanced
 ```
+To run miRBooking with a different database
+```
+java -jar mirdesign_0.16.jar --input input.md --database binsrv2/mirdesign_hg38 --experiment-output experiments --experiment-format advanced
+
+```
 
 # MySQL
 To access mysql
