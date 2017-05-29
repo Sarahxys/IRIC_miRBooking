@@ -87,3 +87,8 @@ first author
 ```
 cd weilln
 ```
+
+# Change permission to enable edit
+```
+chmod 777
+```
