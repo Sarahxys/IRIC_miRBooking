@@ -1,7 +1,7 @@
 # Introduction
 This documentation was based on the protocal that I ran with Jordan's hypoxia + metabolic stress experimental data. 
 
-# Require file 
+# Initial input file 
 It will need average expression files before the calibration function.
 The names of average expression files are: moyenne_HV2_D10HY, moyenne_HV2_D10TC, moyenne_HV2_R0HY
 
@@ -20,7 +20,8 @@ It generated output folder which contain output files: HV2_D10HY, HV2_D10TC, HV2
   ```
   python generate_miRBooking_visualization_table.py
   ```
--  This script woudl run for some times (this dataset took 10min); hence, while it is running, we can do the next step.
+-  This script would run for some times (this dataset took 10min); hence, while it is running, we can do the next step.
+- This script would generate output file: combined_average_expression_updated2. 
 
 # Making miRTables
 - This step needs: all miRBooking outputs.
@@ -28,17 +29,42 @@ It generated output folder which contain output files: HV2_D10HY, HV2_D10TC, HV2
   ```
   python make_miRTables.py
   ```
-- This should be quick (like under 1min).
+- This should be quick (like under 1min). This step would generate files: 
+  ```               
+  HV2_D10HY_contribution.tab                        
+  HV2_D10HY_miRSum.tab                                     
+  HV2_D10TC_contribution.tab 
+  HV2_D10TC_miRSum.tab
+  HV2_R0HY_contribution.tab
+  HV2_R0HY_miRSum.tab
+  ```
 
-#Making 
+# Making xgmml_Network_File
+- This step will need files:
+  - This will need all the previously generated output files. As long as all the outputs files were in the same folder, it should be fine
+  - need to create: reduced_glycolysis.network; reduced_glycolysis_network_miRSum.make;  reduced_glycolysis_network_CONTRIBUTION.make;
+  - In the file `reduced_glycolysis.network`, states the gene of interests as list of gene names or gene:gene interactions. 
+  - In the file `reduced_glycolysis_network_miRSum.make` or `reduced_glycolysis_network_CONTRIBUTION.make`, states the all the file names. And the variable name, type and where to find it. Also the cutoff_value can be changed here too.
+- The script '' should be ran like below if the network file stated gene:gene interaction. 
+  ```
+  python make_miRmRNA_network_isoforms.py reduced_glycolysis_network_miRSum_example.make
+  ```
+- If the network file stated a list of genes, the script should be ran with a second arguement which could be any random letters input:
+  ```
+  python make_miRmRNA_network_isoforms.py reduced_glycolysis_network_miRSum_example.make reowinkjdn
+  ```
+- This generated output file: reduced_glycolysis_miR-mRNA.xgmml. This file can product visualization of network in the software call Cytoscape 
+
+# Visualization in Cytoscape
+- The xgmml file need to be imported into the software: file -> import -> network -> file. 
+
+  
 2. covert it to xml file with all the info (alias, symbols, protein name, and label)
 -  modify for human database (ex. database link, formatting of names, and other difference between human and mice )
 - Blandine should have the modified version
 3. modify the make file and network file
 4. running python
-```
-python script_name make_file
-```
+
 - is the above script the same script in step 2?
 - if doesnt want the pathway arrows to show, put anything behind ... make_file (ex: ```python script_name make_file geingein```);
 5. put output file from 4 into cytoscape 
