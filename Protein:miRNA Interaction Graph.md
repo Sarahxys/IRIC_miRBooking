@@ -14,7 +14,7 @@ java -Xmx10g -jar ~/mirdesign_0.16.jar -s ~/scores -i HV2_LTHY1.mirun --output r
 It generated output folder which contain output files: HV2_D10HY, HV2_D10TC, HV2_R0HY.  
 
 
-#Generate miRBooking Visualization Table
+# Generate miRBooking Visualization Table
 - This step needs: all average expression files; all miRBooking outputs. All the files was in the same file as the scripts.  
 - In the script `generate_miRBooking_visualization_table.py`, edits the input file name for variable f1 and f13, where f1 should be names of the average expression files and f13 should contain the names of the miRBooking output file (the one with all the details). All the  Then run the scripts with:
 ````
