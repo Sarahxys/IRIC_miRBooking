@@ -1,5 +1,5 @@
 # Introduction
-This documentation was based on the protocal that I ran with Jordan's hypoxia + metabolic stress experimental data. 
+This documentation was based on the protocal that I ran with Jordan's hypoxia + metabolic stress experimental data. Jordan's data are from mice experiments and Blandine's data were from human cell line. All the scripts should be modified with human database, human miRNA file and anything `mmu` should change to `hsa`. 
 
 # Initial input file 
 It will need average expression files before the calibration function.
@@ -45,7 +45,7 @@ It generated output folder which contain output files: HV2_D10HY, HV2_D10TC, HV2
   - need to create: reduced_glycolysis.network; reduced_glycolysis_network_miRSum.make;  reduced_glycolysis_network_CONTRIBUTION.make;
   - In the file `reduced_glycolysis.network`, states the gene of interests as list of gene names or gene:gene interactions. 
   - In the file `reduced_glycolysis_network_miRSum.make` or `reduced_glycolysis_network_CONTRIBUTION.make`, states the all the file names. And the variable name, type and where to find it. Also the cutoff_value can be changed here too.
-- The script '' should be ran like below if the network file stated gene:gene interaction. 
+- The script 'make_miRmRNA_network_isoforms.py' should be ran like below if the network file stated gene:gene interaction. 
   ```
   python make_miRmRNA_network_isoforms.py reduced_glycolysis_network_miRSum_example.make
   ```
