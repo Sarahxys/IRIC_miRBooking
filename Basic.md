@@ -87,7 +87,7 @@ to run this script
 Rscript ~/rotate.R result
 ```
 
-#Access folder
+# Access folders
 first author 
 ```
 cd weilln
