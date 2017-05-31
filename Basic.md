@@ -1,4 +1,5 @@
-# Basic Commands for miRBooking and others
+# Introduction
+This page is created to store basic commands for miRBooking and others that I use frequently. 
 
 # miRBooking
 To run miRBooking:
