@@ -37,6 +37,10 @@ For identifying leaders:
     )
   
   ```
+ - The run is too memory consuming; need torque to specify a longer run time and enable the allocation of larger memory. Below is the path to the examples:
+ ```
+ /u/feghalya/miRDesign/HV2-MHY_Jordan/synthDesign
+ ```
 
 - A output file 'result' will be rotated to make it readable. This will generate file 'resultrt'. 
 
