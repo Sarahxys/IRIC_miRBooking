@@ -1,5 +1,5 @@
-#Work log
-#Difference in Header between mirun output with HV2_R0HY *
+# Work log
+# Difference in Header between mirun output with HV2_R0HY *
 I used a script to compare the header of mirun output files ran with HV2_R0HY cell_line. Theoritically they should be the same since I used the same cell line.
 The command that I ran:
 ```
