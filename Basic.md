@@ -98,3 +98,12 @@ cd weilln
 ```
 chmod 777
 ```
+# Using the python version
+to aggregate/summarize result by mirna locaiton:
+```
+cat results | mirbooking -aggregate mirna location |less 
+```
+to aggregate/summerize result by target:
+```
+cat results | mirbooking -aggregate mirna location |less 
+```
