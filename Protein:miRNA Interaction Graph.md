@@ -21,7 +21,7 @@ It generated output folder which contain output files: HV2_D10HY, HV2_D10TC, HV2
   python generate_miRBooking_visualization_table.py
   ```
 -  This script would run for some times (this dataset took 10min); hence, while it is running, we can do the next step.
-- This script would generate output file: combined_average_expression_updated2. 
+- This script would generate output file: ```combined_average_expression_updated2.txt``` 
 
 # Making miRTables
 - This step needs: all miRBooking outputs.
