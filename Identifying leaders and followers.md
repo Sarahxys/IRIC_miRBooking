@@ -50,4 +50,10 @@ To grep the silencing power for gene/target of interested (ex. NM_010699) from '
 awk 'NR==1 || /NM_010699/' result1000rt >isolated1000
 ```
 
+To isolate gene with significant differential expression(1=ID; 24 = log2foldchange; 26=adjusted p-value):
+```
+awk '$24 > 0.2 && $26 >0 && $26 < 0.05 {print $1, $24, $26;}' HV2R0HYvsHV2D10HY.complete.txt | nl
+
+```
+
 
