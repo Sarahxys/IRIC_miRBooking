@@ -107,3 +107,8 @@ to aggregate/summerize result by target:
 ```
 cat results | mirbooking -aggregate mirna location |less 
 ```
+#Accessing jupyter notebook
+```
+ssh -L 8889:localhost:8889 songs@cluster.iric.ca
+module load python/3.4.4
+```
