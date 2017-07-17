@@ -56,7 +56,7 @@ awk '$24 > 0.2 && $26 >0 && $26 < 0.05 {print $1, $24, $26;}' HV2R0HYvsHV2D10HY.
 
 ```
 
-# Python script to cat all the cor result
+# Python script to cat all the computed correlation result
 ```
 import pandas as pd
 from io import StringIO
