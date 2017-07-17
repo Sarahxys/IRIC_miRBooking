@@ -49,12 +49,19 @@ To grep the silencing power for gene/target of interested (ex. NM_010699) from '
 ```
 awk 'NR==1 || /NM_010699/' result1000rt >isolated1000
 ```
-
-To isolate gene with significant differential expression(1=ID; 24 = log2foldchange; 26=adjusted p-value):
+# Differential Expression 
+Differential Expression was done with DESeq by Albert and Jordan. From the DESeq output ```HV2R0HYvsHV2D10HY.complete.txt```(format: 1=ID; 24 = log2foldchange; 26=adjusted p-value. path ```/u/songs/HV2_MS_Jordan/DifferentialExpression_HY_total```), I isolated genes with significant differential expression (cutoffs: log2foldchange  ):
 ```
-awk '$24 > 0.2 && $26 >0 && $26 < 0.05 {print $1, $24, $26;}' HV2R0HYvsHV2D10HY.complete.txt | nl
-
+awk '$24 > 0.2 && $26 >0 && $26 < 0.05 {print $1, $24, $26;}' HV2R0HYvsHV2D10HY.complete.txt  > dfexpr_up_log2fc02_p005
+awk '$24 > 0.2 && $26 >0 && $26 < 0.05 {print $1, $24, $26;}' HV2R0HYvsHV2D10HY.complete.txt > dfexpr_down_log2fc01_p005
 ```
+Since only gene names were included in the ID(ex, gene1013_Agfg1), a perl script ```get_accession.pl ```(path: ```/u/songs/HV2_MS_Jordan/AvExpLevel```) were ran to extract gene accessions from ```combined_average_expression_updated2.txt``` (path: ```/u/songs/HV2_MS_Jordan/test```): 
+```
+perl get_accession.pl dfexpr_up_log2fc02_p005 combined_average_expression_updated2.txt
+perl get_accession.pl dfexpr_down_log2fc01_p005 combined_average_expression_updated2.txt
+```
+The above step will generate two seperate output files with accessions (Note: some gene might corresponded to more than ), :
+
 
 # Python script to cat all the computed correlation result
 ```
