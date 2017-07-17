@@ -56,4 +56,20 @@ awk '$24 > 0.2 && $26 >0 && $26 < 0.05 {print $1, $24, $26;}' HV2R0HYvsHV2D10HY.
 
 ```
 
+# Python script to cat all the cor result
+```
+import pandas as pd
+from io import StringIO
+
+dfs = []
+for i in range(1, 26):
+    with open('HV2_MS_Jordan/AvExpLevel/overexp_noZero_R0HY_mirun/cor_subset{}.tsv'.format(i)) as f:
+        for line in f:
+            dfs.append(pd.read_csv(StringIO(line + next(f)), sep='\t'))
+
+df = pd.concat(dfs)
+
+print(df.to_csv('cor_combined.tsv', sep='\t', index=False, header=True))
+```
+
 
