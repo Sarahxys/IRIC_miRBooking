@@ -98,6 +98,6 @@ df[df.columns[2:]] = pvalues
 print (df.to_csv('p_val_R0HY.tsv', sep = '\t', index = False, header = True))
 
 ```
-To run this script: ```Python3 p_val_print.py```. This took 11min to finish running. 
+To run this script: ```Python3 p_val_print.py```. This took 12min to finish running. 
 
 
