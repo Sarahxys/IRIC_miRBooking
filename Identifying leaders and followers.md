@@ -79,6 +79,7 @@ df = pd.concat(dfs)
 print(df.to_csv('cor_combined.tsv', sep='\t', index=False, header=True))
 ```
 # Pythone script to compute p-value for the above correlation table using zscore
+The below script used zscore to compute p-value; when r= 1 or -1, it indicate perfect correlation and it gave us errors when calculating 1-r^2 (which will equal to zero and cause the zscore to equal to infinity); hence, we made it equal to 0. 
 ```
 import math
 from scipy.stats import t
@@ -94,8 +95,9 @@ pvalues = df[df.columns[2:]].applymap(zscore)
 
 df[df.columns[2:]] = pvalues
 
-df.to_csv('p_val_R0HY.tsv', sys.stdout, sep = '\t')
+print (df.to_csv('p_val_R0HY.tsv', sep = '\t', index = False, header = True))
 
 ```
+To run this script: ```Python3 p_val_print.py```. This took 11min to finish running. 
 
 
