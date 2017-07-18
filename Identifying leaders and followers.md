@@ -78,5 +78,24 @@ df = pd.concat(dfs)
 
 print(df.to_csv('cor_combined.tsv', sep='\t', index=False, header=True))
 ```
+# Pythone script to compute p-value for the above correlation table using zscore
+```
+import math
+from scipy.stats import t
+
+def zscore(r):
+    if math.isnan(r):
+        return r
+    if r == 1 or r == -1:
+        return 0
+    return 2 * t.cdf(r * math.sqrt(52.0 / (1 - math.pow(r, 2))), df=52.0)
+
+pvalues = df[df.columns[2:]].applymap(zscore)
+
+df[df.columns[2:]] = pvalues
+
+df.to_csv('p_val_R0HY.tsv', sys.stdout, sep = '\t')
+
+```
 
 
