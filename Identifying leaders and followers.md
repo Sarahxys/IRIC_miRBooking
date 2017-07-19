@@ -100,4 +100,20 @@ print (df.to_csv('p_val_R0HY.tsv', sep = '\t', index = False, header = True))
 ```
 To run this script: ```Python3 p_val_print.py```. This took 12min to finish running. 
 
+# Not sure
+```
+grep NM_010699 filtered_cor_pval_R0HY_rt.tsv > ldha_exp
+
+awk '$2 < -0.95 {print $1, $2;}' ldha_exprt > pfollowers
+
+perl list_diffAcession.pl pfollowers pleaders
+
+mv list_AcessionDiff.txt pfollowers_filtered
+
+perl get_mis.pl pfollowers_filtered resultNM_010699rt > pfollowers_mis
+
+awk '($2-$55)/$2 > 0.5 {print $1, $2,$55}' pfollwers_mis > pfollowers_mis_filtered
+
+```
+
 
