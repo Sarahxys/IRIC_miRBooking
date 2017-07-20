@@ -54,9 +54,8 @@ Differential Expression was done with DESeq by Albert and Jordan. From the DESeq
 ```
 awk '$24 > 0.2 && $26 >0 && $26 < 0.05 {print $1, $24, $26;}' HV2R0HYvsHV2D10HY.complete.txt  > dfexpr_up_log2fc02_p005
 awk '$24 > 0.2 && $26 >0 && $26 < 0.05 {print $1, $24, $26;}' HV2R0HYvsHV2D10HY.complete.txt > dfexpr_down_log2fc01_p005
- '$24 > 0.2 && $26 < 0.05 {print $1, $24, $26;}' HV2D10HYvsHV2D10TC.complete.txt  > ../../AvExpLevel/overexp_D10HY_mirun/dfexpr_up_log2fc02_p005
+awk'$24 > 0.2 && $26 < 0.05 {print $1, $24, $26;}' HV2D10HYvsHV2D10TC.complete.txt  > ../../AvExpLevel/overexp_D10HY_mirun/dfexpr_up_log2fc02_p005
 awk '$24 < -0.2 && $26 < 0.05 {print $1, $24, $26;}' HV2D10HYvsHV2D10TC.complete.txt > ../../AvExpLevel/overexp_D10HY_mirun/dfexpr_down_log2fc02_p005
-
 awk '$24 > 0.6 && $26 < 0.05 {print $1, $24, $26;}' HV2R0HYvsHV2D10TC.complete.txt > ../../AvExpLevel/overexp_R0HY_mirun/dfexpr_UP_log2fc02_p005
 awk '$24 < -0.6 && $26 < 0.05 {print $1, $24, $26;}' HV2R0HYvsHV2D10TC.complete.txt > ../../AvExpLevel/overexp_R0HY_mirun/dfexpr_down_log2fc02_p005
 ```
