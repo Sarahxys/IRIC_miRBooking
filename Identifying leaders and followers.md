@@ -114,7 +114,16 @@ plt.imshow(df.dropna(thresh=1800).transpose().dropna(thresh=550).transpose().whe
 plt.colorbar()
 plt.show()
 ```
-
+# Python script for dropna
+```
+import pandas as pd
+d_drop = d.drop('Expression_Level', axis=1)
+p_d_drop = p_d.drop('Expression_Level', axis=1)
+d = pd.read_csv('cor_R0HY.tsv', sep='\t', index_col=(0,))
+p_d = pd.read_csv('p_val_R0HY.tsv', sep='\t', index_col = (0,))
+df_rt = d_drop.dropna(thresh=500).transpose().dropna(thresh=50).where(p_d_drop <= 0.05, other = 0)
+print (df_rt.to_csv('filtered_cor_pval_R0HY_dropna.tsv', sep = '\t', index = True, header = True))
+```
 
 # Not sure
 ```
