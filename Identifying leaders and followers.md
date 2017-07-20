@@ -100,6 +100,22 @@ print (df.to_csv('p_val_R0HY.tsv', sep = '\t', index = False, header = True))
 ```
 To run this script: ```Python3 p_val_print.py```. This took 12min to finish running. 
 
+# Python script for generating plot
+```
+import pandas as pd
+df = pd.read_csv('cor_R0HY.tsv', sep='\t', index_col = (0,))
+p_df = pd.read_csv('p_val_R0HY.tsv', sep='\t', index_col = (0,))
+import matplotlib
+import numpy as np
+import matplotlib.pyplot as plt
+%matplotlib inline
+plt.style.use('ggplot')
+plt.imshow(df.dropna(thresh=1800).transpose().dropna(thresh=550).transpose().where(p_df <= 0.05, other=0).transpose(), cmap='hot', interpolation='nearest', aspect='equal')
+plt.colorbar()
+plt.show()
+```
+
+
 # Not sure
 ```
 grep NM_010699 filtered_cor_pval_R0HY_rt.tsv > ldha_exp
