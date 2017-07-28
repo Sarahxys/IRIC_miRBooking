@@ -99,7 +99,7 @@ pvalues = df[df.columns[2:]].applymap(zscore)
 
 df[df.columns[2:]] = pvalues
 
-print (df.to_csv('p_val_R0HY.tsv', sep = '\t', index = False, header = True))
+print (df.to_csv('p_val_R0HY.tsv', sep = '\t', index = True, header = True))
 
 ```
 To run this script: ```Python3 p_val_print.py```. This took 12min to finish running. 
@@ -118,9 +118,21 @@ plt.imshow(df.dropna(thresh=1800).transpose().dropna(thresh=550).transpose().whe
 plt.colorbar()
 plt.show()
 ```
+# Python script for drop Expression level and filter by p_value
+```
+import pandas as pd
+d = pd.read_csv('cor_combined_noheaders_D10HY.tsv', sep='\t', index_col=(0,))
+p_d = pd.read_csv('p_val_D10HY.tsv', sep='\t', index_col = (0,))
+d_drop = d.drop('Expression_Level', axis=1)
+p_d_drop = p_d.drop('Expression_Level', axis=1)
+df_rt = d_drop.where(p_d_drop <= 0.05, other = 0).transpose()
+print (df_rt.to_csv('filtered_cor_pval_D10HY.tsv', sep = '\t', index = True, header = True))
+```
 # Python script for dropna
 ```
 import pandas as pd
+d = pd.read_csv('cor_combined_noheaders_D10HY.tsv', sep='\t', index_col=(0,))
+p_d = pd.read_csv('p_val_D10HY.tsv', sep='\t', index_col = (0,))
 d_drop = d.drop('Expression_Level', axis=1)
 p_d_drop = p_d.drop('Expression_Level', axis=1)
 d = pd.read_csv('cor_R0HY.tsv', sep='\t', index_col=(0,))
