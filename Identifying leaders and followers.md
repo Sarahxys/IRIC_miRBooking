@@ -162,5 +162,10 @@ python3 dropextraline.py
 cat *cor_subset* > cor_combined.tsv
 perl ../rewrite_cor.pl havediffheader.txt cor_combined.tsv > filtered_cor_combined.tsv
 ```
+# Generate p-value base on the t-test equation
+```
+cp filtered_cor_combined.tsv cor_R0HY.tsv
+python3 p_val_print.py
+```
 
 
