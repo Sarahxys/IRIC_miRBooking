@@ -155,4 +155,12 @@ module load python/3.4.4
 python3 dropextraline.py
 ```
 
+# Generate Correlation in section
+
+# Combine and initial filter of correlation sections
+```
+cat *cor_subset* > cor_combined.tsv
+perl ../rewrite_cor.pl havediffheader.txt cor_combined.tsv > filtered_cor_combined.tsv
+```
+
 
