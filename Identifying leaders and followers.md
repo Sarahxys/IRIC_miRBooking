@@ -157,6 +157,36 @@ awk '($2-$55)/$2 > 0.5 {print $1, $2,$55}' pfollwers_mis > pfollowers_mis_filter
 
 ```
 
+```
+[songs@majsrv1 D10TC_overexp_0to6000]$ cd ../R0HY_overexp_0to6000/
+[songs@majsrv1 R0HY_overexp_0to6000]$ vi rotate.py t
+2 files to edit
+[songs@majsrv1 R0HY_overexp_0to6000]$ vi rotate.py
+[songs@majsrv1 R0HY_overexp_0to6000]$ python3 rotate.py
+None
+[songs@majsrv1 R0HY_overexp_0to6000]$ grep NM_010699 filtered_cor_pval_R0HY_rt.tsv >ldha_exp
+[songs@majsrv1 R0HY_overexp_0to6000]$ Rscript ~/rotate.R ldha_exp
+[songs@majsrv1 R0HY_overexp_0to6000]$ awk '$2 < -0.90 {print $1, $2;}' ldha_exprt > pfollowers
+[songs@majsrv1 R0HY_overexp_0to6000]$ wc -l pfollowers
+598 pfollowers
+[songs@majsrv1 R0HY_overexp_0to6000]$ awk '$2 < -0.95 {print $1, $2;}' ldha_exprt > pfollowers
+[songs@majsrv1 R0HY_overexp_0to6000]$ wc -l pfollowers
+409 pfollowers
+[songs@majsrv1 R0HY_overexp_0to6000]$ awk '$2 < -0.85 {print $1, $2;}' ldha_exprt > pfollowers
+[songs@majsrv1 R0HY_overexp_0to6000]$ wc -l pfollowers
+868 pfollowers
+[songs@majsrv1 R0HY_overexp_0to6000]$ awk '$2 < -0.90 {print $1, $2;}' ldha_exprt > pfollowers
+[songs@majsrv1 R0HY_overexp_0to6000]$ grep NM_010699 filtered_cor_pval_R0HY.tsv > ldha_overexpall
+[songs@majsrv1 R0HY_overexp_0to6000]$ less -S ldha_overexpall
+[songs@majsrv1 R0HY_overexp_0to6000]$ Rscript ~/rotate.R ldha_overexpall
+[songs@majsrv1 R0HY_overexp_0to6000]$ awk '$2 < -0.90 {print $1, $2;}' ldha_overexpallrt > pleaders
+[songs@majsrv1 R0HY_overexp_0to6000]$ perl ../list_diffAcession.pl pleaders pfollowers
+[songs@majsrv1 R0HY_overexp_0to6000]$ mv list_AcessionDiff.txt filtered_pleaders
+[songs@majsrv1 R0HY_overexp_0to6000]$ perl ../list_diffAcession.pl pfollowers pleaders
+[songs@majsrv1 R0HY_overexp_0to6000]$ mv list_AcessionDiff.txt filtered_pfollowers
+
+```
+
 # Remove extra mRNA accession in the header
 Sometimes the headers might have an extra items (being the expressed mRNA itself). This is because the accession might not 
 ```
