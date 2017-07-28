@@ -145,4 +145,14 @@ awk '($2-$55)/$2 > 0.5 {print $1, $2,$55}' pfollwers_mis > pfollowers_mis_filter
 
 ```
 
+# Remove extra mRNA accession in the header
+Sometimes the headers might have an extra items (being the expressed mRNA itself). This is because the accession might not 
+```
+ls *resultNM* > listofresult
+perl CompareHeader_result.pl listofresult > havediffheader.txt
+perl dropextraline.pl havediffheader.txt
+module load python/3.4.4
+python3 dropextraline.py
+```
+
 
