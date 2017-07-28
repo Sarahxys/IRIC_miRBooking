@@ -180,4 +180,9 @@ cp filtered_cor_combined.tsv cor_R0HY.tsv
 python3 p_val_print.py
 ```
 
+# Filter cor by pvalue and remove the expression column
+```
+python3 filter_bypval.py
+```
+
 
