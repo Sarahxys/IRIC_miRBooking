@@ -99,6 +99,10 @@ cd weilln
 chmod 777
 ```
 # Using the python version
+to run the mirbooking
+```
+time mirbooking --targets GCF_000001635.25_GRCm38.p5_rna.fna --cds-regions cds-regions.tsv --mirnas mature.fa --score-table scores --quantities HV2_MS_Jordan/AvExpLevel/moyenne_HV2_D10HY
+```
 to aggregate/summarize result by mirna locaiton:
 ```
 cat results | mirbooking -aggregate mirna location |less 
@@ -107,6 +111,7 @@ to aggregate/summerize result by target:
 ```
 cat results | mirbooking -aggregate mirna location |less 
 ```
+
 # Accessing jupyter notebook
 ```
 ssh -L 8889:localhost:8889 songs@cluster.iric.ca
