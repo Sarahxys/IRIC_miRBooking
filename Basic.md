@@ -112,6 +112,12 @@ to aggregate/summerize result by target:
 cat results | mirbooking -aggregate mirna location |less 
 ```
 
+# Submit jobs using torque
+delete all the jobs that was submit by me:
+```
+qselect -u songs | xargs qdel
+```
+
 # Accessing jupyter notebook
 ```
 ssh -L 8889:localhost:8889 songs@cluster.iric.ca
