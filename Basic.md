@@ -124,7 +124,12 @@ ssh -L 8889:localhost:8889 songs@cluster.iric.ca
 module load python/3.4.4
 ```
 
-# rename file extension using bash script
+# bash script: rename file extension
 ```
 for _dir in *"leaderfollower"*; do  cd /u/songs/HV2_MS_Jordan/overexp_0to6000/R0HY_overexp_0to6000/identifyLF_cor_moyenneexp/$_dir && for file in *.txt; do  mv "$file" "${file%.txt}.tsv";done;done
+```
+
+# Bash script: move a bunch of files from one folder to a different folder
+```
+for dir in *"leaderfollower_of_NM_"*; do cp /u/songs/HV2_MS_Jordan/overexp_0to6000/R0HY_overexp_0to6000/identifyLF_cor_calibratedexp_filteredbypval/$dir/*noZeroNM* /u/songs/HV2_MS_Jordan/overexp_0to6000/R0HY_overexp_0to6000/; done
 ```
